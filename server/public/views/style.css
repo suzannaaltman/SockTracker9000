@@ -1,0 +1,40 @@
+body {
+  font-family: courier;
+  background-color: #222222;
+  color: lightgreen;
+  height: 1000px;
+}
+
+a {
+  color: lightgreen;
+}
+
+.nav li{
+  display: inline-block;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+    background-color: transparent;
+    color: white;
+}
+
+#morty {
+  position: relative;
+  display:inline-block;
+  font-size: 14px;
+  width: 10%;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  line-height: 10px;
+}
+#uncle {
+  position: relative;
+  display:inline;
+  font-size: 14px;
+  width: 70%;
+  float: right;
+  text-align: left;
+  font-weight: bold;
+  line-height: 10px;
+}

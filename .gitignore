@@ -1,0 +1,4 @@
+node_modules
+.DS_Store
+server/public/assets
+server/public/vendors
