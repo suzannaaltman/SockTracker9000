@@ -14,7 +14,7 @@ var initializeDB = function(){
       'id serial PRIMARY KEY,' +
       'brand varchar(50) NOT NULL,' +
       'style varchar(50) NOT NULL,' +
-      'description varchar(100), NULL' +
+      'description varchar(100),' +
       'purchase_date date NOT NULL,' +
       'purchase_price numeric,' +
       'retired boolean DEFAULT false,' +
