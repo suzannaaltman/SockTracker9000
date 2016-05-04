@@ -1,2 +1,5 @@
 <h2>Sock Drawer</h2>
 <p>{{drawer.message}}</p>
+<ul>
+  <li ng-repeat="sock in drawer.socklist track by $index">Brand/Style: {{sock.brand}}/{{sock.style}} <button>Retire</button> <button>Wear</button><br /> Description: {{sock.description}}<hr></li>
+</ul>

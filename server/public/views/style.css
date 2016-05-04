@@ -4,6 +4,9 @@ body {
   color: lightgreen;
   min-height: 500px;
   margin-bottom: 100px;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
 }
 
 a {
@@ -28,11 +31,51 @@ p {
 
 footer {
   height: 50px;
-  padding-bottom: 20px;
+  padding-bottom: 80px;
+  padding-left: 10%;
   position: fixed;
   bottom: 0px;
-  left: 10%;
   background-color: #222222;
+}
+
+button {
+  background-color: #222222;
+  color: lightgreen;
+  font-size: 14px;
+  margin-right: 10px;
+  float: right;
+}
+
+hr {
+  border: 1px inset gray;
+}
+
+input {
+  font-family: courier;
+  background-color: #222222;
+  color: lightgreen;
+  font-size: 14px;
+  margin: 20px;
+  padding: 10px 15px;
+}
+
+input:hover {
+  color: white;
+}
+
+form {
+  margin-top: 40px;
+}
+
+ul {
+  padding-left: 0;
+  margin: 0 0;
+}
+
+li {
+  font-size: 14px;
+  padding: 10px 0;
+  list-style: none;
 }
 
 .nav li{
@@ -44,10 +87,10 @@ footer {
     color: #d2f8d2;
 }
 
-.ng-scope {
+/*.ng-scope {
   width: 90%;
   margin: 0 auto;
-}
+}*/
 
 /*#morty {
   position: relative;

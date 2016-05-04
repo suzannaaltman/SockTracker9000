@@ -1,0 +1,69 @@
+body {
+  font-family: courier;
+  background-color: #222222;
+  color: lightgreen;
+  height: 1000px;
+}
+
+div {
+  -webkit-animation: move 4s;
+  -webkit-animation-timing-function: linear;
+}
+
+input {
+  font-family: courier;
+  background-color: #222222;
+  color: lightgreen;
+  font-size: 14px;
+  margin: 20px;
+  padding: 10px 15px;
+}
+
+a {
+  color: lightgreen;
+  font-weight: lighter;
+}
+
+input:hover {
+  color: white;
+}
+
+form {
+  margin-top: 40px;
+}
+
+
+#morty {
+  position: relative;
+  display:inline-block;
+  top: 50px;
+  font-size: 14px;
+  width: 22%;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  line-height: 10px;
+}
+
+#uncle {
+  position: relative;
+  display:inline;
+  top: 50px;
+  font-size: 14px;
+  width: 78%;
+  float: right;
+  text-align: left;
+  font-weight: bold;
+  line-height: 8px;
+}
+
+#tracker {
+  left: -130px;
+  font-size: 4px;
+  line-height: 2px;
+}
+
+@-webkit-keyframes move {
+    from {top: 1500px;}
+    to {top: 50px;}
+}
