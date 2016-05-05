@@ -4,6 +4,14 @@ var path = require('path');
 var connectionString = require('../db/connection').connectionString;
 
 
+router.get('/*', function(request, response, next){
+  if(request.isAuthenticated()){
+    next();
+  } else {
+    response.send('404 not found');
+  }
+})
+
 router.get('/', function(request, response){
   response.sendFile(path.join(__dirname, '../public/views/index.html'));
 })
