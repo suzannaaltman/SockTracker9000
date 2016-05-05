@@ -12,10 +12,13 @@
   "dependencies": {
     "angular": "^1.5.5",
     "angular-route": "^1.5.5",
+    "bcrypt": "^0.8.6",
     "body-parser": "^1.15.0",
     "bootstrap": "^3.3.6",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
     "pg": "^4.5.5"
   },
   "devDependencies": {

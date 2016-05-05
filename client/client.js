@@ -16,7 +16,8 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
       templateUrl: 'views/stats.html',
       controller: 'StatsController',
       controllerAs: 'stats'
-    }).when('/about', {
+    })
+    .when('/socks/about', {
       templateUrl: 'views/about.html',
       controller: 'AboutController',
       controllerAs: 'about'
@@ -55,6 +56,6 @@ app.controller('StatsController' ,function(){
 
 app.controller('AboutController', function(){
   this.message = 'This project is an interactive application which draws upon Uncle Morty’s analog sock-tracking system (a file of flat scanned socks, sock packages and receipts - printed and stored in a sock drawer) and moves the process into the 21st century. Suzanna Altman fully acknowledges that Uncle Morty’s original process has generally been considered to be a silly endeavor that wastes time and provides unimportant (though useable) data for future sock purchasing. The creation of Uncle Morty’s SockTracker 9000 upgrades the system, but continues in the tradition of being silly, time-wasting and unimportant. Only Uncle Morty’s fellow engineers may appreciate the outcome.' +
-  'Suzanna believes this project will utilize the SEAN stack well also plans to style the application to look like a program MS-DOS-like program as a throwback to the analog origins of the project. Altman also believes the project will be memorable to interviewers and will be a fun gift to give to Uncle Morty himself.'
+  ' Suzanna believes this project will utilize the SEAN stack well also plans to style the application to look like a program MS-DOS-like program as a throwback to the analog origins of the project. Altman also believes the project will be memorable to interviewers and will be a fun gift to give to Uncle Morty himself.'
 
 });

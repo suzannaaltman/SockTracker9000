@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="views/style.css" />
+    <title>SockTracker Register</title>
+  </head>
+  <header class=container>
+    <div id=logoTop>
+      <img src="views/mortyface.jpg" width="150px" height="auto" alt="uncle morty image" />
+      <h1>Uncle Morty's SockTracker 9000</h1>
+    </div>
+  </header>
+  <body>
+    <div class="container">
+      <h2>Register</h2>
+      <form action="/register" method="post">
+        <div>
+          <label for="email">Email:</label>
+          <input type="text" name="email" id="email"/>
+
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password"/>
+
+          <input type="submit" value="Register" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -3,9 +3,11 @@ var pg = require('pg');
 var path = require('path');
 var connectionString = require('../db/connection').connectionString;
 
+
 router.get('/', function(request, response){
   response.sendFile(path.join(__dirname, '../public/views/index.html'));
 })
+
 
 router.get('/list', function(request, response){
   pg.connect(connectionString, function(err, client, done){
@@ -15,7 +17,6 @@ router.get('/list', function(request, response){
     }else{
       var query = client.query('SELECT * FROM socklist WHERE user_id = 1;');
       var results = [];
-      console.log('results:', results);
 
       query.on('row', function(row){
         results.push(row);
@@ -34,5 +35,9 @@ router.get('/list', function(request, response){
     }
   })
 });
+
+router.get('/*', function(request, response, next){
+  response.redirect('/socks');
+})
 
 module.exports = router;
