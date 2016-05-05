@@ -7,78 +7,77 @@
     <script src="assets/scripts/jquery.min.js"></script>
     <script src="assets/scripts/animate.js"></script>
   </head>
+  <header>
+    <span id="cursor">|<span>
+  </header>
   <body>
-<div id="morty">
-  <pre>______</pre>
-  <pre>/        \</pre>
-  <pre>88/ =       = \88</pre>
-  <pre>8( |  *       *  | )8</pre>
-  <pre>8.|     ||     |.8</pre>
-  <pre>{{{{{{{}}}}}}}</pre>
-  <pre>{{{ \--/ }}}</pre>
-  <pre>{{{{{}}}}}</pre>
-  <pre>{{{}}}</pre>
-  <pre>|\\      //|</pre>
-  <pre>||||| -- |||||</pre>
-  <pre>|//      \\|</pre>
-</div>
-
-<div id="uncle">
-  <div>
-    <pre>__    __  ___    __    ____    __      ______   </pre>
-    <pre>| |   | | |  \   | |  / __ \  | |     |  ___|   </pre>
-    <pre>| |   | | |   \  | | | |  \_| | |     | |___    </pre>
-    <pre>| |   | | | |\ \ | | | |   _  | |     |  ___|   </pre>
-    <pre>\ \___/ / | | \    | | \__/ | | |____ | |___    </pre>
-    <pre> \_____/  |_|  \___|  \____/  |______||_____|   </pre>
-  </div>
-  <div>
-    <pre> ___      ____     ____    ____   __________  __      ___  __    _____ </pre>
-    <pre>|    \   /    |   / __ \  |  _ \  |___   ___| \ \    /  /  \ \  /  __ | </pre>
-    <pre>|     \ /     |  / /  \ \ | | \ |     | |      \ \  /  /    // |  |__   </pre>
-    <pre>|  |\     /|  |  | |  | | | |_/ /     | |       \ \/  /         \___  \ </pre>
-    <pre>|  | \   / |  |  \ \__/ / | |\  \     | |        \   /          ____|  |</pre>
-    <pre>|__|  \_/  |__|   \____/  |_| \__\    |_|   _____/ /           |______/ </pre>
-    <pre>                                           |______/                     </pre>
-  </div>
-  <br />
-  <br />
-  <div id="tracker">
-    <pre>   SSSSSSSSSSSSSSS                                      kkkkkkkk           TTTTTTTTTTTTTTTTTTTTTTT                                                       kkkkkkkk                                                          999999999          000000000          000000000          000000000     </pre>
-    <pre> SS:::::::::::::::S                                     k::::::k           T:::::::::::::::::::::T                                                       k::::::k                                                        99:::::::::99      00:::::::::00      00:::::::::00      00:::::::::00   </pre>
-    <pre>S:::::SSSSSS::::::S                                     k::::::k           T:::::::::::::::::::::T                                                       k::::::k                                                      99:::::::::::::99  00:::::::::::::00  00:::::::::::::00  00:::::::::::::00 </pre>
-    <pre>S:::::S     SSSSSSS                                     k::::::k           T:::::TT:::::::TT:::::T                                                       k::::::k                                                     9::::::99999::::::90:::::::000:::::::00:::::::000:::::::00:::::::000:::::::0</pre>
-    <pre>S:::::S               ooooooooooo       cccccccccccccccc k:::::k    kkkkkkkTTTTTT  T:::::T  TTTTTTrrrrr   rrrrrrrrr   aaaaaaaaaaaaa      cccccccccccccccc k:::::k    kkkkkkk eeeeeeeeeeee    rrrrr   rrrrrrrrr        9:::::9     9:::::90::::::0   0::::::00::::::0   0::::::00::::::0   0::::::0</pre>
-    <pre>S:::::S             oo:::::::::::oo   cc:::::::::::::::c k:::::k   k:::::k         T:::::T        r::::rrr:::::::::r  a::::::::::::a   cc:::::::::::::::c k:::::k   k:::::kee::::::::::::ee  r::::rrr:::::::::r       9:::::9     9:::::90:::::0     0:::::00:::::0     0:::::00:::::0     0:::::0</pre>
-    <pre> S::::SSSS         o:::::::::::::::o c:::::::::::::::::c k:::::k  k:::::k          T:::::T        r:::::::::::::::::r aaaaaaaaa:::::a c:::::::::::::::::c k:::::k  k:::::ke::::::eeeee:::::eer:::::::::::::::::r       9:::::99999::::::90:::::0     0:::::00:::::0     0:::::00:::::0     0:::::0</pre>
-    <pre>  SS::::::SSSSS    o:::::ooooo:::::oc:::::::cccccc:::::c k:::::k k:::::k           T:::::T        rr::::::rrrrr::::::r         a::::ac:::::::cccccc:::::c k:::::k k:::::ke::::::e     e:::::err::::::rrrrr::::::r       99::::::::::::::90:::::0     0:::::00:::::0     0:::::00:::::0     0:::::0</pre>
-    <pre>    SSS::::::::SS  o::::o     o::::oc::::::c     ccccccc k::::::k:::::k            T:::::T         r:::::r     r:::::r  aaaaaaa:::::ac::::::c     ccccccc k::::::k:::::k e:::::::eeeee::::::e r:::::r     r:::::r         99999::::::::9 0:::::0     0:::::00:::::0     0:::::00:::::0     0:::::0</pre>
-    <pre>       SSSSSS::::S o::::o     o::::oc:::::c              k:::::::::::k             T:::::T         r:::::r     rrrrrrraa::::::::::::ac:::::c              k:::::::::::k  e:::::::::::::::::e  r:::::r     rrrrrrr              9::::::9  0:::::0     0:::::00:::::0     0:::::00:::::0     0:::::0</pre>
-    <pre>            S:::::So::::o     o::::oc:::::c              k:::::::::::k             T:::::T         r:::::r           a::::aaaa::::::ac:::::c              k:::::::::::k  e::::::eeeeeeeeeee   r:::::r                         9::::::9   0:::::0     0:::::00:::::0     0:::::00:::::0     0:::::0</pre>
-    <pre>            S:::::So::::o     o::::oc::::::c     ccccccc k::::::k:::::k            T:::::T         r:::::r          a::::a    a:::::ac::::::c     ccccccc k::::::k:::::k e:::::::e            r:::::r                        9::::::9    0::::::0   0::::::00::::::0   0::::::00::::::0   0::::::0</pre>
-    <pre> SSSSSSS     S:::::So:::::ooooo:::::oc:::::::cccccc:::::ck::::::k k:::::k        TT:::::::TT       r:::::r          a::::a    a:::::ac:::::::cccccc:::::ck::::::k k:::::ke::::::::e           r:::::r                       9::::::9     0:::::::000:::::::00:::::::000:::::::00:::::::000:::::::0</pre>
-    <pre> S::::::SSSSSS:::::So:::::::::::::::o c:::::::::::::::::ck::::::k  k:::::k       T:::::::::T       r:::::r          a:::::aaaa::::::a c:::::::::::::::::ck::::::k  k:::::ke::::::::eeeeeeee   r:::::r                      9::::::9       00:::::::::::::00  00:::::::::::::00  00:::::::::::::00 </pre>
-    <pre> S:::::::::::::::SS  oo:::::::::::oo   cc:::::::::::::::ck::::::k   k:::::k      T:::::::::T       r:::::r           a::::::::::aa:::a cc:::::::::::::::ck::::::k   k:::::kee:::::::::::::e   r:::::r                     9::::::9          00:::::::::00      00:::::::::00      00:::::::::00   </pre>
-    <pre>  SSSSSSSSSSSSSSS      ooooooooooo       cccccccccccccccckkkkkkkk    kkkkkkk     TTTTTTTTTTT       rrrrrrr            aaaaaaaaaa  aaaa   cccccccccccccccckkkkkkkk    kkkkkkk eeeeeeeeeeeeee   rrrrrrr                    99999999             000000000          000000000          000000000     </pre>
-
-  </div>
-  <form action="/" method="post">
-    <div>
-      <label for="username">Username:</label>
-      <input type="text" name="username" id="username"/>
+    <div id="morty">
+      <pre>______</pre>
+      <pre>/        \</pre>
+      <pre>88/ =       = \88</pre>
+      <pre>8( |  *       *  | )8</pre>
+      <pre>8.|     ||     |.8</pre>
+      <pre>{{{{{{{}}}}}}}</pre>
+      <pre>{{{ \--/ }}}</pre>
+      <pre>{{{{{}}}}}</pre>
+      <pre>{{{}}}</pre>
+      <pre>|\\      //|</pre>
+      <pre>||||| -- |||||</pre>
+      <pre>|//      \\|</pre>
     </div>
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password"/>
+
+    <div id="uncle">
+      <div>
+        <pre>__    __  ___    __    ____   __      ______   </pre>
+        <pre>| |   | | |  \   | |  / __ \  | |     |  ___|   </pre>
+        <pre>| |   | | |   \  | | | |  \_| | |     | |___    </pre>
+        <pre>| |   | | | |\ \ | | | |   _  | |     |  ___|   </pre>
+        <pre>\ \___/ / | | \    | | \__/ | | |____ | |___    </pre>
+        <pre> \_____/  |_|  \___|  \____/  |______||_____|   </pre>
+      </div>
+      <div>
+        <pre> ___      ____     ____    ____    _________  __      ___  __    _____ </pre>
+        <pre>|    \   /    |   / __ \  |  _ \  |___   ___| \ \    /  /  \ \  /  __ | </pre>
+        <pre>|     \ /     |  / /  \ \ | | \ |     | |      \ \  /  /    // |  |__   </pre>
+        <pre>|  |\     /|  |  | |  | | | |_/ /     | |       \ \/  /         \___  \ </pre>
+        <pre>|  | \   / |  |  \ \__/ / | |\  \     | |        \   /          ____|  |</pre>
+        <pre>|__|  \_/  |__|   \____/  |_| \__\    |_|   _____/ /           |______/ </pre>
+        <pre>                                           |______/                     </pre>
+      </div>
+      <br />
+      <br />
+      <div id="tracker">
+        <pre>   SSSSSSSSSSSSSSS                                      kkkkkkkk           TTTTTTTTTTTTTTTTTTTTTTT                                                       kkkkkkkk                                                          999999999          000000000          000000000          000000000     </pre>
+        <pre> SS:::::::::::::::S                                     k::::::k           T:::::::::::::::::::::T                                                       k::::::k                                                        99:::::::::99      00:::::::::00      00:::::::::00      00:::::::::00   </pre>
+        <pre>S:::::SSSSSS::::::S                                     k::::::k           T:::::::::::::::::::::T                                                       k::::::k                                                      99:::::::::::::99  00:::::::::::::00  00:::::::::::::00  00:::::::::::::00 </pre>
+        <pre>S:::::S     SSSSSSS                                     k::::::k           T:::::TT:::::::TT:::::T                                                       k::::::k                                                     9::::::99999::::::90:::::::000:::::::00:::::::000:::::::00:::::::000:::::::0</pre>
+        <pre>S:::::S               ooooooooooo       cccccccccccccccc k:::::k    kkkkkkkTTTTTT  T:::::T  TTTTTTrrrrr   rrrrrrrrr   aaaaaaaaaaaaa      cccccccccccccccc k:::::k    kkkkkkk eeeeeeeeeeee    rrrrr   rrrrrrrrr        9:::::9     9:::::90::::::0   0::::::00::::::0   0::::::00::::::0   0::::::0</pre>
+        <pre>S:::::S             oo:::::::::::oo   cc:::::::::::::::c k:::::k   k:::::k         T:::::T        r::::rrr:::::::::r  a::::::::::::a   cc:::::::::::::::c k:::::k   k:::::kee::::::::::::ee  r::::rrr:::::::::r       9:::::9     9:::::90:::::0     0:::::00:::::0     0:::::00:::::0     0:::::0</pre>
+        <pre> S::::SSSS         o:::::::::::::::o c:::::::::::::::::c k:::::k  k:::::k          T:::::T        r:::::::::::::::::r aaaaaaaaa:::::a c:::::::::::::::::c k:::::k  k:::::ke::::::eeeee:::::eer:::::::::::::::::r       9:::::99999::::::90:::::0     0:::::00:::::0     0:::::00:::::0     0:::::0</pre>
+        <pre>  SS::::::SSSSS    o:::::ooooo:::::oc:::::::cccccc:::::c k:::::k k:::::k           T:::::T        rr::::::rrrrr::::::r         a::::ac:::::::cccccc:::::c k:::::k k:::::ke::::::e     e:::::err::::::rrrrr::::::r       99::::::::::::::90:::::0     0:::::00:::::0     0:::::00:::::0     0:::::0</pre>
+        <pre>    SSS::::::::SS  o::::o     o::::oc::::::c     ccccccc k::::::k:::::k            T:::::T         r:::::r     r:::::r  aaaaaaa:::::ac::::::c     ccccccc k::::::k:::::k e:::::::eeeee::::::e r:::::r     r:::::r         99999::::::::9 0:::::0     0:::::00:::::0     0:::::00:::::0     0:::::0</pre>
+        <pre>       SSSSSS::::S o::::o     o::::oc:::::c              k:::::::::::k             T:::::T         r:::::r     rrrrrrraa::::::::::::ac:::::c              k:::::::::::k  e:::::::::::::::::e  r:::::r     rrrrrrr              9::::::9  0:::::0     0:::::00:::::0     0:::::00:::::0     0:::::0</pre>
+        <pre>            S:::::So::::o     o::::oc:::::c              k:::::::::::k             T:::::T         r:::::r           a::::aaaa::::::ac:::::c              k:::::::::::k  e::::::eeeeeeeeeee   r:::::r                         9::::::9   0:::::0     0:::::00:::::0     0:::::00:::::0     0:::::0</pre>
+        <pre>            S:::::So::::o     o::::oc::::::c     ccccccc k::::::k:::::k            T:::::T         r:::::r          a::::a    a:::::ac::::::c     ccccccc k::::::k:::::k e:::::::e            r:::::r                        9::::::9    0::::::0   0::::::00::::::0   0::::::00::::::0   0::::::0</pre>
+        <pre> SSSSSSS     S:::::So:::::ooooo:::::oc:::::::cccccc:::::ck::::::k k:::::k        TT:::::::TT       r:::::r          a::::a    a:::::ac:::::::cccccc:::::ck::::::k k:::::ke::::::::e           r:::::r                       9::::::9     0:::::::000:::::::00:::::::000:::::::00:::::::000:::::::0</pre>
+        <pre> S::::::SSSSSS:::::So:::::::::::::::o c:::::::::::::::::ck::::::k  k:::::k       T:::::::::T       r:::::r          a:::::aaaa::::::a c:::::::::::::::::ck::::::k  k:::::ke::::::::eeeeeeee   r:::::r                      9::::::9       00:::::::::::::00  00:::::::::::::00  00:::::::::::::00 </pre>
+        <pre> S:::::::::::::::SS  oo:::::::::::oo   cc:::::::::::::::ck::::::k   k:::::k      T:::::::::T       r:::::r           a::::::::::aa:::a cc:::::::::::::::ck::::::k   k:::::kee:::::::::::::e   r:::::r                     9::::::9          00:::::::::00      00:::::::::00      00:::::::::00   </pre>
+        <pre>  SSSSSSSSSSSSSSS      ooooooooooo       cccccccccccccccckkkkkkkk    kkkkkkk     TTTTTTTTTTT       rrrrrrr            aaaaaaaaaa  aaaa   cccccccccccccccckkkkkkkk    kkkkkkk eeeeeeeeeeeeee   rrrrrrr                    99999999             000000000          000000000          000000000     </pre>
+      </div>
+      <form action="/" method="post">
+        <div>
+          <label for="username">Username:</label>
+          <input type="text" name="username" id="username"/>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password"/>
+        </div>
+        <div>
+        <input type="submit" value="Log In" />
+        <a href="/register">Register</a>
+        </div>
+      </form>
     </div>
-    <div>
-    <input type="submit" value="Log In" />
-    <a href="/register">Register</a>
-    </div>
-  </form>
-</div>
-
-
-
   </body>
 </html>

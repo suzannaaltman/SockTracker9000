@@ -32,6 +32,11 @@ form {
   margin-top: 40px;
 }
 
+#cursor{
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 2px 0 0 lightgreen;
+}
 
 #morty {
   position: relative;
