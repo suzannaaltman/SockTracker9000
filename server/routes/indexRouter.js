@@ -10,18 +10,13 @@ router.get('/', function(request, response, next){
   response.sendFile(path.join(__dirname, '../public/views/front.html'));
 })
 
-// router.get('/isAuth', function(request, response, next){
-//   response.send(request.isAuthenticated());
-//   console.log('request is Authenticated');
-// });
-
 router.get('/stinky', function(request, response){
   response.sendFile(path.join(__dirname, '../public/views/stinky.html'));
 })
 
 router.get('/logout', function(request, response){
   request.logout();
-  console.log('user logged out');
+  // console.log('user logged out');
   response.redirect('/');
 })
 

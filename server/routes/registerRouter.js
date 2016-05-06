@@ -17,7 +17,7 @@ router.post('/', function(request, response, next){
       email: request.body.email,
       password: encryptLib.encryptPassword(request.body.password)
     }
-    console.log('creating user:', user);
+    // console.log('creating user:', user);
 
     var query = client.query('INSERT INTO userlist (email, password) VALUES ($1, $2)', [user.email, user.password]);
 

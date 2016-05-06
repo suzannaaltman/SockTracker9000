@@ -40,23 +40,23 @@ passport.use('local', new localStrategy({
   usernameField: 'email'
 },
   function(request, email, password, done){
-    console.log('called local');
+    // console.log('called local');
     pg.connect(connection.connectionString, function (err, client){
-      console.log('called local-pg');
+      // console.log('called local-pg');
 
       var user = {};
 
       var query = client.query("SELECT * FROM userlist WHERE email = $1", [email]);
 
       query.on('row', function(row){
-        console.log('User obj:', row);
-        console.log('Password:', password);
+        // console.log('User obj:', row);
+        // console.log('Password:', password);
         user = row;
         if(encryptLib.comparePassword(password, user.password)){
-          console.log('Email and password matched');
+          // console.log('Email and password matched');
           done(null, user);
         }else{
-          console.log('Email and password NOT matched');
+          // console.log('Email and password NOT matched');
           done(null, false);
         }
       });
@@ -75,19 +75,19 @@ passport.use('local', new localStrategy({
 
 //authenticate users
 passport.serializeUser(function(user, done){
-  console.log('Hit serializeUser');
+  // console.log('Hit serializeUser');
   done(null, user.id);
 });
 
 passport.deserializeUser(function(id, done){
-  console.log('called deserializeUser');
+  // console.log('called deserializeUser');
   pg.connect(connection.connectionString, function(err, client){
     var user = {};
-    console.log('called deserializeUser - pg');
+    // console.log('called deserializeUser - pg');
     var query = client.query("SELECT * FROM userlist WHERE id = $1", [id]);
 
     query.on('row', function(row){
-      console.log('User row', row);
+      // console.log('User row', row);
       user = row;
       done(null, user);
     });
