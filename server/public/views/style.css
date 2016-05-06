@@ -46,6 +46,10 @@ button {
   float: right;
 }
 
+button:focus {
+  outline: none;
+}
+
 hr {
   border: 1px inset gray;
 }
@@ -86,30 +90,3 @@ li {
     background-color: transparent;
     color: #d2f8d2;
 }
-
-
-/*.ng-scope {
-  width: 90%;
-  margin: 0 auto;
-}*/
-
-/*#morty {
-  position: relative;
-  display:inline-block;
-  font-size: 14px;
-  width: 10%;
-  float: left;
-  text-align: center;
-  font-weight: bold;
-  line-height: 10px;
-}
-#uncle {
-  position: relative;
-  display:inline;
-  font-size: 14px;
-  width: 70%;
-  float: right;
-  text-align: left;
-  font-weight: bold;
-  line-height: 10px;
-}*/

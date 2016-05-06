@@ -1,3 +1,7 @@
+*:focus {
+    outline: none;
+}
+
 body {
   font-family: courier;
   background-color: #222222;
