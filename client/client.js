@@ -29,7 +29,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 
 app.controller('DrawerController' , ['$http', function($http){
   var drawer = this;
-  drawer.message = 'Welcome to the Sock Drawer!';
+  drawer.message = '';
   drawer.socklist = [];
 
   drawer.getSocks = function(){
@@ -40,9 +40,15 @@ app.controller('DrawerController' , ['$http', function($http){
       drawer.style = '';
       drawer.description = '';
       drawer.id = 0;
-      console.log('socklist:', drawer.socklist);
+      // console.log('socklist:', drawer.socklist);
     });
   }
+  if(drawer.socklist.length > 0){
+    drawer.message = 'Welcome to the Sock Drawer!'
+  }else{
+    drawer.message = 'Welcome to Uncle Morty\'s SockTracker 9000! Time to add some socks!';
+  }
+
   drawer.getSocks();
 }]);
 
