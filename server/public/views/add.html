@@ -1,2 +1,33 @@
-<h2>Add</h2>
-<p>{{add.message}}</p>
+<h2>Add Your Pairs!</h2>
+<form action="/socks" method="post">
+  <row class="col-md-12">
+    <div class="sockForm col-md-4">
+      <label for="brand">Brand<sup>*</sup>:</label>
+      <input type="text" class="form-control" name="brand" maxlength= "50" required="true" id="brand"/>
+    </div>
+    <div class="sockForm col-md-4">
+      <label for="style">Style<sup>*</sup>:</label>
+      <input type="text" class="form-control" name="style" maxlength= "50" required="true" id="style"/>
+    </div>
+    <div class="col-md-3"></div>
+  </row>
+  <br />
+  <row class="col-md-12">
+    <div class="sockForm col-md-4">
+      <label for="description">Description:</label>
+      <input type="text" class="form-control" name="description" maxlength= "100" id="description"/>
+    </div>
+    <div class="sockForm col-md-4">
+      <label for="date">Purchase Date<sup>*</sup>:</label>
+      <input type="date" class="form-control" required="true" name="date" id="date"/>
+    </div>
+  </row>
+  <br />
+  <row class="col-md-12">
+    <div class="sockForm col-md-4">
+      <label for="price">Purchase Price<sup>*</sup>:</label>
+      <input type="number" class="form-control" required="true" name="price" id="price" min="0" max="250" step=".01" value="00.00" />
+    </div>
+    <div class="submit col-md-3"><input type="submit" value="Submit Sock"/></div>
+  </row>
+</form>

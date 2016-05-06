@@ -1,3 +1,7 @@
+*:focus {
+    outline: none;
+}
+
 body {
   font-family: courier;
   background-color: #222222;
@@ -59,12 +63,28 @@ input {
   background-color: #222222;
   color: lightgreen;
   font-size: 14px;
-  margin: 20px;
-  padding: 10px 15px;
 }
 
-input:hover {
-  color: white;
+input[type=submit] {
+  position: relative;
+  top: 25px;
+  height: 34px;
+}
+
+input[type=text]{
+  color: lightgreen;
+}
+
+input[type=date]:focus {
+  color: lightgreen;
+}
+
+input[type=number]:focus {
+  color: lightgreen;
+}
+
+input:focus {
+  outline: none;
 }
 
 form {
@@ -82,6 +102,10 @@ li {
   list-style: none;
 }
 
+row {
+  margin: 20px 40px;
+}
+
 .nav li{
   display: inline-block;
 }
@@ -89,4 +113,9 @@ li {
 .nav>li>a:hover, .nav>li>a:focus {
     background-color: transparent;
     color: #d2f8d2;
+}
+
+.form-control {
+  background-color: #222222;
+  border-radius: 0;
 }

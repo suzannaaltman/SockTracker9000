@@ -1,7 +1,7 @@
 var router = require('express').Router();
 var pg = require('pg');
 var path = require('path');
-var connectionString = require('../db/connection').connectionString;
+var connection = require('../db/connection').connectionString;
 
 var userId = '';
 
@@ -20,7 +20,7 @@ router.get('/', function(request, response){
 })
 
 router.get('/list', function(request, response){
-  pg.connect(connectionString, function(err, client, done){
+  pg.connect(connection, function(err, client, done){
     if(err){
       console.log(err);
       response.sendStatus(500);
@@ -43,6 +43,34 @@ router.get('/list', function(request, response){
         response.sendStatus(500);
       });
     }
+  })
+});
+
+router.post('/', function(request, response, next){
+  pg.connect(connection, function(err, client){
+    console.log('request.body:', request.body);
+
+    var sock = {
+      brand: request.body.brand,
+      style: request.body.style,
+      description: request.body.description,
+      purchase_date: request.body.date,
+      purchase_price: request.body.price
+    }
+    console.log('request.body.price', request.body.price);
+    console.log('creating sock:', sock);
+    console.log('userId:', userId);
+
+    var query = client.query('INSERT INTO socklist (brand, style, description, purchase_date, purchase_price, user_id) VALUES ($1, $2, $3, $4, $5, $6)', [sock.brand, sock.style, sock.description, sock.purchase_date, sock.purchase_price, userId]);
+
+    query.on('error', function(err){
+      console.log('error', err);
+    })
+
+    query.on('end', function(){
+      response.redirect('/socks');
+      client.end();
+    })
   })
 });
 

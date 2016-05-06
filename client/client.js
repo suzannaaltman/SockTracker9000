@@ -40,13 +40,14 @@ app.controller('DrawerController' , ['$http', function($http){
       drawer.style = '';
       drawer.description = '';
       drawer.id = 0;
-      // console.log('socklist:', drawer.socklist);
+      console.log('socklist:', drawer.socklist);
+      if(drawer.socklist.length > 0){
+        drawer.message = 'Welcome to the Sock Drawer!'
+      }else{
+        drawer.message = 'Welcome to Uncle Morty\'s SockTracker 9000! Time to add some socks!';
+      }
+
     });
-  }
-  if(drawer.socklist.length > 0){
-    drawer.message = 'Welcome to the Sock Drawer!'
-  }else{
-    drawer.message = 'Welcome to Uncle Morty\'s SockTracker 9000! Time to add some socks!';
   }
 
   drawer.getSocks();
