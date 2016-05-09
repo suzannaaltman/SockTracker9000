@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>SockTracker9000</title>
-    <link rel="stylesheet" href="views/aniStyle.css" />
+    <link rel="stylesheet" href="views/style.css" />
     <script src="assets/scripts/jquery.min.js"></script>
     <script src="assets/scripts/animate.js"></script>
   </head>
   <header>
     <span id="cursor">|<span>
   </header>
-  <body>
-    <div id="morty">
+  <body id="animateBody">
+    <div class="animate" id="morty">
       <pre>______</pre>
       <pre>/        \</pre>
       <pre>88/ =       = \88</pre>
@@ -26,7 +26,7 @@
       <pre>|//      \\|</pre>
     </div>
 
-    <div id="uncle">
+    <div class="animate" id="uncle">
       <div>
         <pre>__    __  ___    __    ____   __      ______   </pre>
         <pre>| |   | | |  \   | |  / __ \  | |     |  ___|   </pre>
@@ -46,7 +46,7 @@
       </div>
       <br />
       <br />
-      <div id="tracker">
+      <div class="animate" id="tracker">
         <pre>   SSSSSSSSSSSSSSS                                      kkkkkkkk           TTTTTTTTTTTTTTTTTTTTTTT                                                       kkkkkkkk                                                          999999999          000000000          000000000          000000000     </pre>
         <pre> SS:::::::::::::::S                                     k::::::k           T:::::::::::::::::::::T                                                       k::::::k                                                        99:::::::::99      00:::::::::00      00:::::::::00      00:::::::::00   </pre>
         <pre>S:::::SSSSSS::::::S                                     k::::::k           T:::::::::::::::::::::T                                                       k::::::k                                                      99:::::::::::::99  00:::::::::::::00  00:::::::::::::00  00:::::::::::::00 </pre>
@@ -65,17 +65,17 @@
         <pre>  SSSSSSSSSSSSSSS      ooooooooooo       cccccccccccccccckkkkkkkk    kkkkkkk     TTTTTTTTTTT       rrrrrrr            aaaaaaaaaa  aaaa   cccccccccccccccckkkkkkkk    kkkkkkk eeeeeeeeeeeeee   rrrrrrr                    99999999             000000000          000000000          000000000     </pre>
       </div>
       <form action="/" method="post">
-        <div>
+        <div class="login">
           <label for="email">Email:</label>
           <input type="text" name="email" id="email" required="true" />
         </div>
-        <div>
+        <div class="login">
           <label for="password">Password:</label>
           <input type="password" name="password" id="password" required="true" />
         </div>
         <div>
         <input type="submit" value="Log In" />
-        <a href="/register">Register</a>
+        <a class="login" href="/register">Register</a>
         </div>
       </form>
     </div>

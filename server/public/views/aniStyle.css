@@ -9,11 +9,6 @@ body {
   height: 1000px;
 }
 
-div {
-  -webkit-animation: move 4s;
-  -webkit-animation-timing-function: linear;
-}
-
 input {
   font-family: courier;
   background-color: #222222;
@@ -34,6 +29,11 @@ input:hover {
 
 form {
   margin-top: 40px;
+}
+
+.animate {
+  -webkit-animation: move 4s;
+  -webkit-animation-timing-function: linear;
 }
 
 #cursor{
