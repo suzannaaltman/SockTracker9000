@@ -6,12 +6,13 @@ var connection = require('../db/connection').connectionString;
 var userId = '';
 
 router.get('/*', function(request, response, next){
+  console.log('authenitcate catch-all');
   if(request.isAuthenticated()){
     userId = request.user.id;
-    // console.log(userId);
+    console.log(userId);
     next();
   } else {
-    response.send('404 not found');
+    response.redirect('/');
   }
 })
 
@@ -25,7 +26,34 @@ router.get('/list', function(request, response){
       console.log(err);
       response.sendStatus(500);
     }else{
-      var query = client.query('SELECT * FROM socklist WHERE user_id = '+ userId + ';');
+      var query = client.query('SELECT * FROM socklist WHERE retired = false AND user_id = '+ userId + ' ORDER BY brand;');
+      var results = [];
+
+      query.on('row', function(row){
+        results.push(row);
+      });
+
+      query.on('end', function(){
+        done();
+        response.send(results);
+      });
+
+      query.on('error', function(error){
+        console.log('Error running query:', error);
+        done();
+        response.sendStatus(500);
+      });
+    }
+  })
+});
+
+router.get('/statsList', function(request, response){
+  pg.connect(connection, function(err, client, done){
+    if(err){
+      console.log(err);
+      response.sendStatus(500);
+    }else{
+      var query = client.query('SELECT * FROM socklist WHERE user_id = '+ userId + 'ORDER BY brand;');
       var results = [];
 
       query.on('row', function(row){
@@ -74,7 +102,54 @@ router.post('/', function(request, response, next){
   })
 });
 
+router.put('/retire', function(request, response, next){
+  pg.connect(connection, function(err, client){
+    console.log('Clicked RETIRE. Sock=', request.body);
+    var sock = request.body;
+    var sockId = request.body.id;
+    // var newDate = Date();
+    // console.log('newDate:', newDate);
+
+    var query = client.query('UPDATE socklist SET (retired, date_retired) = (true, now()) WHERE id = ($1)', [sockId]);
+
+    query.on('error', function(err){
+      console.log('error', err);
+    })
+
+    query.on('end', function(){
+      console.log('Retired sock:', sock);
+      response.sendStatus(200);
+      client.end();
+    })
+  })
+});
+
+router.put('/worn', function(request, response, next){
+  pg.connect(connection, function(err, client){
+    console.log('Clicked worn. Sock=', request.body);
+    var sock = request.body;
+    var sockId = request.body.id;
+    var timesWorn = request.body.times_worn;
+    timesWorn++;
+
+    var query = client.query('UPDATE socklist SET times_worn = ' + timesWorn + ' WHERE id = ($1)', [sockId]);
+
+    query.on('error', function(err){
+      console.log('error', err);
+    })
+
+    query.on('end', function(){
+      console.log('Wore sock:', sock);
+      response.sendStatus(200);
+      client.end();
+    })
+  })
+
+});
+
+
 router.get('/*', function(request, response, next){
+  console.log('sock catch-all hit');
   response.redirect('/socks');
 })
 

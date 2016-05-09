@@ -7,10 +7,12 @@ var registerRouter = require('./registerRouter');
 
 
 router.get('/', function(request, response, next){
+  console.log('stinky?, / called');
   response.sendFile(path.join(__dirname, '../public/views/front.html'));
 })
 
 router.get('/stinky', function(request, response){
+  console.log('stinky called');
   response.sendFile(path.join(__dirname, '../public/views/stinky.html'));
 })
 
@@ -20,7 +22,6 @@ router.get('/logout', function(request, response){
   response.redirect('/');
 })
 
-
 router.post('/',
   passport.authenticate('local', {
     successRedirect:'/socks',
@@ -28,9 +29,10 @@ router.post('/',
   })
 );
 
+
 //Routers
 router.use('/socks', sockRouter);
-router.use('/register', registerRouter)
+router.use('/register', registerRouter);
 
 
 module.exports = router;
