@@ -40,54 +40,60 @@ passport.use('local', new localStrategy({
   usernameField: 'email'
 },
   function(request, email, password, done){
-    // console.log('called local');
+    console.log('called local');
     pg.connect(connection.connectionString, function (err, client){
-      // console.log('called local-pg');
+      console.log('called local-pg');
+
+      //handle errors
+      if(err){
+        console.log('error:', err);
+      }
 
       var user = {};
 
-      var query = client.query("SELECT * FROM userlist WHERE email = $1", [email]);
+      client.query("SELECT * FROM userlist WHERE email = $1", [email], function(err, results){
 
-      query.on('row', function(row){
-        // console.log('User obj:', row);
-        // console.log('Password:', password);
-        user = row;
-        if(encryptLib.comparePassword(password, user.password)){
-          // console.log('Email and password matched');
-          done(null, user);
-        }else{
-          // console.log('Email and password NOT matched');
-          done(null, false);
+        if(err){
+          console.log('error', err);
         }
+
+        if(results.rowCount >= 1){
+          console.log('User obj:', results.rows[0]);
+          console.log('Password:', password);
+          user = results.rows[0];
+          if(encryptLib.comparePassword(password, user.password)){
+            console.log('Email and password matched');
+            done(null, user);
+          }else{
+            console.log('Email and password NOT matched');
+            done(null, false);
+          }
+        }else{
+          done();
+        }
+
+        client.end();
+
       });
 
-    //after data is returned, close connection
-    query.on('end', function() {
-      client.end();
-    });
-
-    //handle errors
-    if(err){
-      console.log(err);
-    }
   });
 }));
 
 //authenticate users
 passport.serializeUser(function(user, done){
-  // console.log('Hit serializeUser');
+  console.log('Hit serializeUser');
   done(null, user.id);
 });
 
 passport.deserializeUser(function(id, done){
-  // console.log('called deserializeUser');
+  console.log('called deserializeUser');
   pg.connect(connection.connectionString, function(err, client){
     var user = {};
-    // console.log('called deserializeUser - pg');
+    console.log('called deserializeUser - pg');
     var query = client.query("SELECT * FROM userlist WHERE id = $1", [id]);
 
     query.on('row', function(row){
-      // console.log('User row', row);
+      console.log('User row', row);
       user = row;
       done(null, user);
     });
