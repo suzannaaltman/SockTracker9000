@@ -9,8 +9,6 @@ var localStrategy = require('passport-local').Strategy;
 //local
 var index = require('./routes/indexRouter');
 var connection = require('./db/connection');
-// var registerRouter = require('.routes/registerRouter'); //these go through the indexRouter
-// var sockRouter = require('./routes/sockRouter');
 var encryptLib = require('../modules/encryption');
 
 var app = express();
@@ -40,9 +38,9 @@ passport.use('local', new localStrategy({
   usernameField: 'email'
 },
   function(request, email, password, done){
-    console.log('called local');
+    // console.log('called local');
     pg.connect(connection.connectionString, function (err, client){
-      console.log('called local-pg');
+      // console.log('called local-pg');
 
       //handle errors
       if(err){
@@ -58,14 +56,14 @@ passport.use('local', new localStrategy({
         }
 
         if(results.rowCount >= 1){
-          console.log('User obj:', results.rows[0]);
-          console.log('Password:', password);
+          // console.log('User obj:', results.rows[0]);
+          // console.log('Password:', password);
           user = results.rows[0];
           if(encryptLib.comparePassword(password, user.password)){
-            console.log('Email and password matched');
+            // console.log('Email and password matched');
             done(null, user);
           }else{
-            console.log('Email and password NOT matched');
+            // console.log('Email and password NOT matched');
             done(null, false);
           }
         }else{
@@ -81,15 +79,15 @@ passport.use('local', new localStrategy({
 
 //authenticate users
 passport.serializeUser(function(user, done){
-  console.log('Hit serializeUser');
+  // console.log('Hit serializeUser');
   done(null, user.id);
 });
 
 passport.deserializeUser(function(id, done){
-  console.log('called deserializeUser');
+  // console.log('called deserializeUser');
   pg.connect(connection.connectionString, function(err, client){
     var user = {};
-    console.log('called deserializeUser - pg');
+    // console.log('called deserializeUser - pg');
     var query = client.query("SELECT * FROM userlist WHERE id = $1", [id]);
 
     query.on('row', function(row){
