@@ -31,9 +31,7 @@ router.get('/stinky', function(request, response){
 
 
 
-//Routers
-router.use('/socks', sockRouter);
-router.use('/register', registerRouter);
+
 
 
 module.exports = router;

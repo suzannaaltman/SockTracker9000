@@ -110,6 +110,12 @@ passport.deserializeUser(function(id, done){
 
 //Routes
 app.use('/', index);
+app.use('/socks', sockRouter);
+app.use('/register', registerRouter);
+
+app.get('/*', function(req, res){
+  res.sendFile(__dirname + '/public/views/index.html');
+})
 
 var server = app.listen(port, function(){
   var port = server.address().port;
