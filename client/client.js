@@ -105,7 +105,6 @@ app.controller('StatsController' , ['$http', function($http){
       stats.date_retired = '';
       stats.price_per_wear = 0;
       for(var i = 0; i < stats.socks.length; i++){
-        console.log(stats.pricePerWear);
         if(stats.socks[i].retired === true){
           stats.retiredSocks.push(stats.socks[i]);
         }else{
@@ -121,7 +120,14 @@ app.controller('StatsController' , ['$http', function($http){
 }]);
 
 app.controller('AboutController', function(){
-  this.message = 'This project is an interactive application which draws upon Uncle Morty’s analog sock-tracking system (a file of flat scanned socks, sock packages and receipts - printed and stored in a sock drawer) and moves the process into the 21st century. Suzanna Altman fully acknowledges that Uncle Morty’s original process has generally been considered to be a silly endeavor that wastes time and provides unimportant (though useable) data for future sock purchasing. The creation of Uncle Morty’s SockTracker 9000 upgrades the system, but continues in the tradition of being silly, time-wasting and unimportant. Only Uncle Morty’s fellow engineers may appreciate the outcome.' +
-  ' Suzanna believes this project will utilize the SEAN stack well also plans to style the application to look like a program MS-DOS-like program as a throwback to the analog origins of the project. Altman also believes the project will be memorable to interviewers and will be a fun gift to give to Uncle Morty himself.'
+  this.message = 'This project is an interactive application which draws upon ' +
+  'Uncle Morty’s analog sock-tracking system (a file of flat scanned socks, sock packages and ' +
+  'receipts - printed and stored in a sock drawer) and moves the process into the 21st century. ' +
+  'Suzanna Altman fully acknowledges that Uncle Morty’s original process has generally been ' +
+  'considered to be a silly endeavor that wastes time and provides unimportant (though useable) ' +
+  'data for future sock purchasing. The creation of Uncle Morty’s SockTracker 9000 upgrades the ' +
+  'system, but continues in the tradition of being silly, time-wasting and unimportant. ' +
+  'Only Uncle Morty’s fellow engineers may appreciate the outcome.'
+
 
 });
