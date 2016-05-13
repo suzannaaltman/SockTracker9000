@@ -9,7 +9,7 @@ var initializeDB = function(){
       process.exit(1);
     } else {
       //create initial schema
-      var userList = 'CREATE TABLE IF NOT EXISTS userList (id SERIAL PRIMARY KEY, email varchar(100) NOT NULL, password varchar(100) NOT NULL);';
+      var userList = 'CREATE TABLE IF NOT EXISTS userList (id SERIAL PRIMARY KEY, email varchar(100) NOT NULL UNIQUE, password varchar(100) NOT NULL);';
       var sockList = 'CREATE TABLE IF NOT EXISTS sockList (' +
       'id serial PRIMARY KEY,' +
       'brand varchar(50) NOT NULL,' +
@@ -18,7 +18,9 @@ var initializeDB = function(){
       'purchase_date date NOT NULL,' +
       'purchase_price numeric,' +
       'retired boolean DEFAULT false,' +
+      'date_retired date,' +
       'times_worn int DEFAULT 0,' +
+      'price_per_wear numeric,' +
       'user_id INT REFERENCES userList(id));';
       var query = client.query(userList + sockList);
 
