@@ -7,14 +7,16 @@ var registerRouter = require('./registerRouter');
 
 
 router.get('/', function(request, response, next){
-  console.log('stinky?, / called');
+  console.log('front page called with \'\/\'');
   response.sendFile(path.join(__dirname, '../public/views/front.html'));
 })
 
-router.get('/stinky', function(request, response){
-  console.log('stinky called');
-  response.sendFile(path.join(__dirname, '../public/views/stinky.html'));
-})
+router.post('/',
+  passport.authenticate('local', {
+    successRedirect:'/socks',
+    failureRedirect: '/stinky'
+  })
+);
 
 router.get('/logout', function(request, response){
   request.logout();
@@ -22,12 +24,11 @@ router.get('/logout', function(request, response){
   response.redirect('/');
 })
 
-router.post('/',
-  passport.authenticate('local', {
-    successRedirect:'/socks',
-    failureRedirect:'/stinky'
-  })
-);
+router.get('/stinky', function(request, response){
+  console.log('stinky called');
+  response.sendFile(path.join(__dirname, '../public/views/stinky.html'));
+})
+
 
 
 //Routers
