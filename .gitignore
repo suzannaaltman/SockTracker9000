@@ -1,6 +1,5 @@
 node_modules
 .DS_Store
-server/public/assets/scripts/client.min.js
 server/public/assets/scripts/jquery.min.js
 server/public/vendors
 Gruntfile-from-assessment
