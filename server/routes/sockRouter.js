@@ -107,8 +107,6 @@ router.put('/retire', function(request, response, next){
     console.log('Clicked RETIRE. Sock=', request.body);
     var sock = request.body;
     var sockId = request.body.id;
-    // var newDate = Date();
-    // console.log('newDate:', newDate);
 
     var query = client.query('UPDATE socklist SET (retired, date_retired) = (true, now()) WHERE id = ($1)', [sockId]);
 
