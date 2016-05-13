@@ -8,6 +8,8 @@ var localStrategy = require('passport-local').Strategy;
 
 //local
 var index = require('./routes/indexRouter');
+var sockRouter = require('./sockRouter');
+var registerRouter = require('./registerRouter');
 var connection = require('./db/connection');
 var encryptLib = require('../modules/encryption');
 
