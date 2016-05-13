@@ -31,6 +31,11 @@ p {
   color: #d2f8d2;
 }
 
+p.messageText{
+  margin-top: 20px;
+  margin-left: 5%;
+}
+
 footer {
   height: 50px;
   padding-bottom: 80px;
@@ -193,6 +198,12 @@ a.login {
   text-align: center;
   font-weight: bold;
   line-height: 10px;
+}
+
+#register {
+  margin-top: 50px;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 #uncle {

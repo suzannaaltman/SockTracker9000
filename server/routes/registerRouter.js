@@ -7,9 +7,11 @@ var pg = require('pg');
 var encryptLib = require('../../modules/encryption');
 var connection = require('../db/connection').connectionString;
 
+
 router.get('/', function(request, response, next){
   response.sendFile(path.resolve(__dirname, '../public/views/register.html'));
 });
+
 
 router.post('/', function(request, response, next){
   pg.connect(connection, function(err, client){
@@ -23,6 +25,7 @@ router.post('/', function(request, response, next){
 
     query.on('error', function(err){
       console.log('error', err);
+      response.redirect('/stinky');
     })
 
     query.on('end', function(){
