@@ -150,6 +150,27 @@ router.put('/worn', function(request, response, next){
 
 });
 
+router.delete('/deleteSock/:sockId', function(request, response, next){
+  pg.connect(connection, function(err, client){
+    console.log('Clicked delete. Sock=', request.params.sockId);
+    var sockId = request.params.sockId;
+
+    var query = client.query('DELETE FROM socklist WHERE id = ($1)', [sockId]);
+
+    query.on('error', function(err){
+      console.log('error', err);
+    })
+
+    query.on('end', function(){
+      console.log('Deleted sock:', sockId);
+      response.sendStatus(200);
+      client.end();
+    })
+  })
+
+});
+
+
 
 router.get('/*', function(request, response, next){
   console.log('sock catch-all hit');

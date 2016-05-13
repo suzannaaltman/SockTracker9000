@@ -68,6 +68,16 @@ app.controller('DrawerController' , ['$http', function($http){
     drawer.getSocks();
   };
 
+  drawer.deleteSock = function(sock) {
+    console.log('Sock deleted is:', sock);
+    sockId = sock.id;
+    $http.delete('/socks/deleteSock/' + sockId).then(function(response){
+      console.log('deleted sock response:', response);
+    })
+    drawer.getSocks();
+  };
+
+
   drawer.getSocks();
 }]);
 
