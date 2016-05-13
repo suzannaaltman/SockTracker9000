@@ -53,7 +53,7 @@ router.get('/statsList', function(request, response){
       console.log(err);
       response.sendStatus(500);
     }else{
-      var query = client.query('SELECT * FROM socklist WHERE user_id = '+ userId + 'ORDER BY brand;');
+      var query = client.query('SELECT * FROM socklist WHERE user_id = '+ userId + 'ORDER BY brand, style, description;');
       var results = [];
 
       query.on('row', function(row){

@@ -1,13 +1,13 @@
 <h2>Sock Stats</h2>
 
-<div class="retired">
+<div ng-show="stats.retiredSocks[0]" class="retired ng-show">
   <h3>Retired Socks:</h3>
   <ul>
     <li ng-repeat="sock in stats.retiredSocks track by $index"><h4>Price per wear: ${{sock.price_per_wear}}</h4> <br /> Brand/Style: {{sock.brand}}/{{sock.style}} <br /> Description: {{sock.description}} <br /> Purchase Price: ${{sock.purchase_price}} <br /> Times Worn: {{sock.times_worn}} <hr></li>
   </ul>
 </div>
 
-<div class="available">
+<div ng-show="stats.availSocks[0]" class="available ng-show">
   <h3>Available Socks:</h3>
   <ul>
     <li ng-repeat="sock in stats.availSocks track by $index"><h4>Price per wear: ${{sock.price_per_wear}}</h4> <br /> Brand/Style: {{sock.brand}}/{{sock.style}} <br /> Description: {{sock.description}} <br /> Purchase Price: ${{sock.purchase_price}} <br /> Times Worn: {{sock.times_worn}} <hr></li>
