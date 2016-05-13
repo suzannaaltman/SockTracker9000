@@ -1,7 +1,3 @@
-*:focus {
-    outline: none;
-}
-
 body {
   font-family: courier;
   background-color: #222222;
@@ -131,6 +127,12 @@ row {
 .form-control {
   background-color: #222222;
   border-radius: 0;
+}
+
+.form-control:focus{
+    border-color: #cccccc;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .animateBody {
