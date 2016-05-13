@@ -115,10 +115,6 @@ app.use('/', index);
 app.use('/socks', sockRouter);
 app.use('/register', registerRouter);
 
-app.get('/*', function(req, res){
-  res.sendFile(__dirname + '/public/views/index.html');
-})
-
 var server = app.listen(port, function(){
   var port = server.address().port;
   console.log('Listening on port', port, '. Use ctrl-c to exit.');
