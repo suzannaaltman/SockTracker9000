@@ -93,7 +93,9 @@ app.controller('StatsController' , ['$http', function($http){
       stats.times_worn = 0;
       stats.retired = '';
       stats.date_retired = '';
+      stats.price_per_wear = 0;
       for(var i = 0; i < stats.socks.length; i++){
+        console.log(stats.pricePerWear);
         if(stats.socks[i].retired === true){
           stats.retiredSocks.push(stats.socks[i]);
         }else{

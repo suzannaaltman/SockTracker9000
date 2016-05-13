@@ -128,9 +128,14 @@ router.put('/worn', function(request, response, next){
     var sock = request.body;
     var sockId = request.body.id;
     var timesWorn = request.body.times_worn;
+    var purchase_price = request.body.purchase_price;
+
     timesWorn++;
 
-    var query = client.query('UPDATE socklist SET times_worn = ' + timesWorn + ' WHERE id = ($1)', [sockId]);
+    var price_per_wear = purchase_price / timesWorn;
+    console.log('price_per_wear:', price_per_wear);
+
+    var query = client.query('UPDATE socklist SET times_worn = ' + timesWorn + ', price_per_wear = ' + price_per_wear + 'WHERE id = ($1)', [sockId]);
 
     query.on('error', function(err){
       console.log('error', err);

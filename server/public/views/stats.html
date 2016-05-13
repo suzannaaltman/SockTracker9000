@@ -3,13 +3,13 @@
 <div class="retired">
   <h3>Retired Socks:</h3>
   <ul>
-    <li ng-repeat="sock in stats.retiredSocks track by $index"><h4>Price per wear: ${{sock.purchase_price / sock.times_worn}}</h4> <br /> Brand/Style: {{sock.brand}}/{{sock.style}} <br /> Description: {{sock.description}} <br /> Purchase Price: ${{sock.purchase_price}} <br /> Times Worn: {{sock.times_worn}}<hr></li>
+    <li ng-repeat="sock in stats.retiredSocks track by $index"><h4>Price per wear: ${{sock.price_per_wear}}</h4> <br /> Brand/Style: {{sock.brand}}/{{sock.style}} <br /> Description: {{sock.description}} <br /> Purchase Price: ${{sock.purchase_price}} <br /> Times Worn: {{sock.times_worn}} <hr></li>
   </ul>
 </div>
 
 <div class="available">
   <h3>Available Socks:</h3>
   <ul>
-    <li ng-repeat="sock in stats.availSocks track by $index"><h4>Price per wear: ${{sock.purchase_price / sock.times_worn}}</h4> <br /> Brand/Style: {{sock.brand}}/{{sock.style}} <br /> Description: {{sock.description}} <br /> Purchase Price: ${{sock.purchase_price}} <br /> Times Worn: {{sock.times_worn}}<hr></li>
+    <li ng-repeat="sock in stats.availSocks track by $index"><h4>Price per wear: ${{sock.price_per_wear}}</h4> <br /> Brand/Style: {{sock.brand}}/{{sock.style}} <br /> Description: {{sock.description}} <br /> Purchase Price: ${{sock.purchase_price}} <br /> Times Worn: {{sock.times_worn}} <hr></li>
   </ul>
 </div>
