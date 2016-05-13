@@ -1,6 +1,15 @@
 var pg = require('pg');
 
-var connectionString = 'postgres://localhost:5432/socktracker';
+var connectionString;
+
+if (process.env.DATABASE_URL){
+ pg.defaults.ssl = true;
+ console.log('environment var');
+ connectionString = process.env.DATABASE_URL;
+} else {
+ console.log('local var');
+ connectionString = 'postgres://localhost:5432/socktracker';
+}
 
 var initializeDB = function(){
   pg.connect(connectionString, function(err, client, done){
