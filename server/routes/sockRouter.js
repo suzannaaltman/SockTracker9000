@@ -9,7 +9,7 @@ router.get('/*', function(request, response, next){
   console.log('authenitcate catch-all');
   if(request.isAuthenticated()){
     userId = request.user.id;
-    console.log(userId);
+    // console.log(userId);
     next();
   } else {
     response.redirect('/');

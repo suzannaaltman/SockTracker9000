@@ -2,8 +2,7 @@ var router = require('express').Router();
 var path = require('path');
 var passport = require('passport');
 
-var sockRouter = require('./sockRouter');
-var registerRouter = require('./registerRouter');
+
 
 
 router.get('/', function(request, response, next){
